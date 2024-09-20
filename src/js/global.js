@@ -3,10 +3,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 import $ from 'jquery'
 
+import automatedTabs from './helpers/automatedTabs'
+import nav from './nav'
+
 function global() {
-  $("[data-btn='wrap']").each(function () {
-    const clipEl = $(this).find("[data-btn='clip']").attr('aria-hidden', 'true')
-    const durationSetting = 0.4
+  $('.button.is-main').each(function () {
+    const clipEl = $(this)
+      .find('.button_main_inner.hover')
+      .attr('aria-hidden', 'true')
+    const durationSetting = 0.7
     const easeSetting = 'power2.out'
 
     function getPercentTop(el, e) {
@@ -44,6 +49,9 @@ function global() {
       })
     })
   })
+
+  automatedTabs()
+  nav()
 }
 
 export default global

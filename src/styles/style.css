@@ -22,3 +22,25 @@
 .hero-scroll_img_photo {
   will-change: transform;
 }
+
+/* The animation code */
+@keyframes fill {
+  0% {
+    opacity: 1;
+    width: 0%;
+  }
+  95% {
+    opacity: 1;
+    width: 100%;
+  }
+  100% {
+    opacity: 0;
+    width: 100%;
+  }
+}
+
+/* The element to apply the animation to */
+.tabs_item.is-active .tabs_item_divider-active {
+  animation-name: fill;
+  animation-duration: 5s;
+}
