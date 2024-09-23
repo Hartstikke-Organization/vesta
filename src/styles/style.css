@@ -44,3 +44,7 @@
   animation-name: fill;
   animation-duration: 5s;
 }
+
+.main-wrapper {
+  background-color: black;
+}
