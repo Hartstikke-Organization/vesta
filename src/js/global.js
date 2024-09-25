@@ -5,6 +5,7 @@ import $ from 'jquery'
 import Lenis from 'lenis'
 
 import automatedTabs from './helpers/automatedTabs'
+import moduleTabs from './helpers/moduleTabs'
 import nav from './nav'
 
 function global() {
@@ -52,6 +53,7 @@ function global() {
   })
 
   automatedTabs()
+  moduleTabs()
   nav()
 
   // Initializes smooth scrolling with Lenis and integrates it with GSAP's ScrollTrigger.
@@ -74,6 +76,68 @@ function global() {
 
   // Activate the smooth scrolling feature.
   initSmoothScrolling()
+
+  // Function to animate the header (frame)
+  const animateHero = () => {
+    const frame = document.querySelector('.block.is-hero')
+    const frameTitle = frame.querySelector('.home-hero_logo')
+
+    const tl = gsap.timeline({
+      defaults: {
+        ease: 'none',
+      },
+      scrollTrigger: {
+        trigger: frame,
+        start: 'clamp(top bottom)',
+        end: 'bottom top',
+        scrub: true,
+      },
+    })
+
+    tl.to(frame, {
+      yPercent: 35,
+      // scale: 0.95,
+      startAt: { filter: 'brightness(100%)' },
+      filter: 'brightness(30%)',
+    })
+    if (frameTitle) {
+      tl.to(
+        '.home-hero_visual',
+        { rotateZ: 15, xPercent: 20, yPercent: 15 },
+        0
+      ).to(
+        frameTitle,
+        {
+          xPercent: -20,
+        },
+        0
+      )
+    }
+  }
+
+  const animateFooter = () => {
+    const frame = document.querySelector('.block.is-footer')
+
+    gsap
+      .timeline({
+        defaults: {
+          ease: 'none',
+        },
+        scrollTrigger: {
+          trigger: frame,
+          start: 'top bottom',
+          end: 'bottom bottom',
+          scrub: true,
+        },
+      })
+      .from(frame, {
+        yPercent: -35,
+        startAt: { filter: 'brightness(100%)' },
+        filter: 'brightness(30%)',
+      })
+  }
+  animateHero()
+  animateFooter()
 }
 
 export default global

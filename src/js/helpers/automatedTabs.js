@@ -8,11 +8,12 @@ function automatedTabs() {
   // Automated tabs
   let myTimer
 
-  $('.tabs_item').on('click', function () {
-    $('.is-active').removeClass('is-active')
+  // Scope the tabs and is-active to tabs_component
+  const tabsComponent = $('.tabs_component')
+
+  tabsComponent.find('.tabs_item').on('click', function () {
+    tabsComponent.find('.is-active').removeClass('is-active')
     $(this).addClass('is-active')
-    // let myIndex = $(this).index()
-    // $('.product_image').eq(myIndex).addClass('is-active')
     clearInterval(myTimer)
     runInterval()
 
@@ -21,16 +22,16 @@ function automatedTabs() {
 
   function runInterval() {
     myTimer = setInterval(function () {
-      let currentItems = $('.is-active')
+      let currentItems = tabsComponent.find('.is-active')
       if (currentItems.next().length > 0) {
         currentItems.next().addClass('is-active')
       } else {
-        $('.tabs_item').eq(0).addClass('is-active')
-        // $('.product_image').eq(0).addClass('is-active')
+        tabsComponent.find('.tabs_item').eq(0).addClass('is-active')
       }
       currentItems.removeClass('is-active')
     }, 5000)
   }
+
   runInterval()
 }
 
