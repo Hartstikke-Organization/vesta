@@ -93,3 +93,16 @@
 #jobs_grid {
   flex-direction: column !important;
 }
+
+.nav_component.is--active {
+  color: var(--link-color--link-primary);
+}
+
+.nav_bg {
+  border-radius: 1.25rem;
+}
+
+.nav_component.is--active .nav_bg {
+  transform: scaleY(1);
+  border-radius: 1.25rem;
+}
