@@ -80,38 +80,43 @@ function global() {
   // Function to animate the header (frame)
   const animateHero = () => {
     const frame = document.querySelector('.block.is-hero')
-    const frameTitle = frame.querySelector('.home-hero_logo')
+    let frameTitle
+    if (frame) {
+      frameTitle = frame.querySelector('.home-hero_logo')
+    }
 
-    const tl = gsap.timeline({
-      defaults: {
-        ease: 'none',
-      },
-      scrollTrigger: {
-        trigger: frame,
-        start: 'clamp(top bottom)',
-        end: 'bottom top',
-        scrub: true,
-      },
-    })
-
-    tl.to(frame, {
-      yPercent: 35,
-      // scale: 0.95,
-      startAt: { filter: 'brightness(100%)' },
-      filter: 'brightness(30%)',
-    })
-    if (frameTitle) {
-      tl.to(
-        '.home-hero_visual',
-        { rotateZ: 15, xPercent: 20, yPercent: 15 },
-        0
-      ).to(
-        frameTitle,
-        {
-          xPercent: -20,
+    if (frame) {
+      const tl = gsap.timeline({
+        defaults: {
+          ease: 'none',
         },
-        0
-      )
+        scrollTrigger: {
+          trigger: frame,
+          start: 'clamp(top bottom)',
+          end: 'bottom top',
+          scrub: true,
+        },
+      })
+
+      tl.to(frame, {
+        yPercent: 35,
+        // scale: 0.95,
+        startAt: { filter: 'brightness(100%)' },
+        filter: 'brightness(30%)',
+      })
+      if (frameTitle) {
+        tl.to(
+          '.home-hero_visual',
+          { rotateZ: 15, xPercent: 20, yPercent: 15 },
+          0
+        ).to(
+          frameTitle,
+          {
+            xPercent: -20,
+          },
+          0
+        )
+      }
     }
   }
 

@@ -81,3 +81,15 @@
   animation-name: fill;
   animation-duration: 3.5s;
 }
+
+.button.is-tab.w--current .support_tab-line-active {
+  transform: scaleX(1);
+}
+
+.support_link-item:hover .support_link-line-active {
+  transform: scaleX(1);
+}
+
+#jobs_grid {
+  flex-direction: column !important;
+}
