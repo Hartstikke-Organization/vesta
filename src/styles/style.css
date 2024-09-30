@@ -70,11 +70,19 @@
 }
 
 .module_visual-wrap:nth-child(2) {
-  top: 10%;
+  top: 10% !important;
 }
 
 .module_visual-wrap:nth-child(3) {
-  top: 20%;
+  top: 20% !important;
+}
+
+.module_visual-wrap:nth-child(4) {
+  top: 30% !important;
+}
+
+.module_visual-wrap:nth-child(5) {
+  top: 40% !important;
 }
 
 .module_item.is-active .module_item_line-active {
@@ -99,10 +107,7 @@
 }
 
 .nav_bg {
-  border-radius: 1.25rem;
 }
 
 .nav_component.is--active .nav_bg {
-  transform: scaleY(1);
-  border-radius: 1.25rem;
 }
