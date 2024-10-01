@@ -21,12 +21,27 @@ function configurator() {
       'input[name="processor"]:checked'
     ).value
 
-    const amount = document.querySelector('input[name="amount"]:checked').value
+    let amount
+
+    if (document.querySelector('input[name="amount"]:checked')) {
+      amount = document.querySelector('input[name="amount"]:checked').value
+    } else {
+      amount = document.querySelector('input[name="amount_custom"]').value
+    }
 
     document.querySelector('.configurator_summary_number').textContent = amount
-
+    const summaryText =
+      processor +
+      ', ' +
+      display +
+      ', ' +
+      interfaceModule +
+      ', ' +
+      communicationModule
     document.querySelector('.configurator_summary_details').textContent =
-      processor + ', ' + display + interfaceModule + ', ' + communicationModule
+      summaryText
+
+    console.log(summaryText)
   }
   buttonNextToLast.addEventListener('click', () => {
     generateSummary()

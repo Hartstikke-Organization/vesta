@@ -8,6 +8,39 @@ gsap.registerPlugin(ScrollTrigger)
 function nav() {
   const mm = gsap.matchMedia() // Create a matchMedia instance
 
+  // const navbarMenu = document.querySelector('.nav_component')
+  // const offsetY = 80
+  // let oldScroll = 0
+
+  // window.addEventListener('load', function () {
+  //   if (window.scrollY > offsetY) {
+  //     navbarMenu.classList.add('is-active')
+  //   } else {
+  //     navbarMenu.classList.remove('is-active')
+  //   }
+  // })
+
+  // window.addEventListener('scroll', () => {
+  //   if (window.scrollY > offsetY) {
+  //     navbarMenu.classList.add('is-active')
+  //   } else {
+  //     navbarMenu.classList.remove('is-active')
+  //   }
+
+  //   if (
+  //     window.scrollY > oldScroll &&
+  //     navbarMenu.classList.contains('is-active')
+  //   ) {
+  //     // when scrolling DOWN
+  //     navbarMenu.classList.add('is-scrolled')
+  //   } else {
+  //     // when scrolling UP
+  //     navbarMenu.classList.remove('is-scrolled')
+  //   }
+
+  //   oldScroll = window.scrollY
+  // })
+
   mm.add('(min-width: 992px)', () => {
     const toggles = document.querySelectorAll('.nav_dropdown-toggle')
     let currentOpenDropdown = null
