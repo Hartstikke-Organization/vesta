@@ -52,11 +52,7 @@ function global() {
     })
   })
 
-  automatedTabs()
-  moduleTabs()
-  nav()
-
-  // Function to animate the header (frame)
+  // Function to animate the HERO
   const animateHero = () => {
     const frame = document.querySelector('.block.is-hero')
     let frameTitle
@@ -99,6 +95,7 @@ function global() {
     }
   }
 
+  // Function to animate the FOOTER
   const animateFooter = () => {
     const frame = document.querySelector('.block.is-footer')
 
@@ -120,8 +117,19 @@ function global() {
         filter: 'brightness(30%)',
       })
   }
-  animateHero()
-  animateFooter()
+
+  const mm = gsap.matchMedia() // Create a matchMedia instance
+
+  const init = () => {
+    mm.add('(min-width: 992px)', () => {
+      animateHero()
+      animateFooter()
+    })
+    nav()
+    automatedTabs()
+    moduleTabs()
+  }
+  init()
 }
 
 export default global
