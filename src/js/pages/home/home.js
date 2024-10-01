@@ -8,6 +8,7 @@ import blurInEffect from '../../helpers/blurInEffect'
 gsap.registerPlugin(ScrollTrigger)
 
 function home() {
+  const mm = gsap.matchMedia() // Create a matchMedia instance
   const hardwareAnimation = () => {
     let imgWrap = document.querySelectorAll('.home-hardware_img-wrapper')
 
@@ -49,9 +50,11 @@ function home() {
   }
 
   const init = () => {
-    flipCorners()
-    blurInEffect()
-    hardwareAnimation()
+    mm.add('(min-width: 479px)', () => {
+      flipCorners()
+      blurInEffect()
+      hardwareAnimation()
+    })
   }
 
   init()
