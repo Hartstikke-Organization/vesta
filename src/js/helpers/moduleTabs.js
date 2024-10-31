@@ -22,7 +22,8 @@ function moduleTabs() {
         .addClass('is-active')
 
       clearInterval(myTimer)
-      runInterval()
+      $(this).find('.module_item_line').css('display', 'none')
+      // runInterval()
 
       return false
     })
@@ -41,7 +42,7 @@ function moduleTabs() {
             .addClass('is-active')
         }
         currentItems.removeClass('is-active')
-      }, 3500)
+      }, 8000)
     }
 
     // Start the interval for the current module_component

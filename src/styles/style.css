@@ -43,7 +43,8 @@
 /* The element to apply the animation to */
 .tabs_item.is-active .tabs_item_divider-active {
   animation-name: fill;
-  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-duration: 4s;
 }
 
 .module_item-bottom {
@@ -60,25 +61,10 @@
     -webkit-clip-path 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.module_visual-wrap:nth-child(2) {
-  top: 10% !important;
-}
-
-.module_visual-wrap:nth-child(3) {
-  top: 20% !important;
-}
-
-.module_visual-wrap:nth-child(4) {
-  top: 30% !important;
-}
-
-.module_visual-wrap:nth-child(5) {
-  top: 40% !important;
-}
-
 .module_item.is-active .module_item_line-active {
   animation-name: fill;
-  animation-duration: 3.5s;
+  animation-timing-function: linear;
+  animation-duration: 8.4s;
 }
 
 .button.is-tab.w--current .support_tab-line-active {
@@ -118,4 +104,15 @@
 
 .nav_component.is-scrolled {
   transform: translateY(-150%);
+}
+
+.map_dot_outline,
+.map_dot_text {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  transform: translateZ(0);
+}
+
+.map_dot {
+  transform: translateZ(0);
 }

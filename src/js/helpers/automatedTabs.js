@@ -29,7 +29,7 @@ function automatedTabs() {
         tabsComponent.find('.tabs_item').eq(0).addClass('is-active')
       }
       currentItems.removeClass('is-active')
-    }, 5000)
+    }, 4000)
   }
 
   runInterval()
