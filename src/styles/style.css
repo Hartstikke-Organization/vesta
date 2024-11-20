@@ -97,9 +97,34 @@
 .nav_component.is-active .nav_bg-active {
   transform: scaleY(1);
 }
+.nav_component .nav_logo {
+  transition: color 0.2s ease-in-out;
+}
+
+.nav_component.is-active .nav_logo {
+  color: black !important;
+}
 
 .nav_component {
-  transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* .nav_component:has(.nav_dropdown-toggle:hover),
+.nav_component.is-active,
+.nav_component:has(.nav_dropdown-toggle:hover) .nav_logo {
+  color: black;
+} */
+
+.menu-icon_line-top,
+.menu-icon_line-middle,
+.menu-icon_line-bottom {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.nav_component.is-active .menu-icon_line-top,
+.nav_component.is-active .menu-icon_line-middle,
+.nav_component.is-active .menu-icon_line-bottom {
+  background-color: black;
 }
 
 .nav_component.is-scrolled {
@@ -115,4 +140,9 @@
 
 .map_dot {
   transform: translateZ(0);
+}
+
+.w-nav-overlay {
+  padding-left: 3.5%;
+  padding-right: 3.5%;
 }
