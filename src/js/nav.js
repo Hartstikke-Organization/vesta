@@ -21,7 +21,7 @@ function nav() {
     }
   })
 
-  const hamburgerTrigger = document.querySelector('.nav_menu-button')
+  const hamburgerTrigger = document.querySelector('.nav_menu-button.is-dark')
 
   hamburgerTrigger.addEventListener('click', () => {
     let openState = hamburgerTrigger.getAttribute('aria-expanded')
