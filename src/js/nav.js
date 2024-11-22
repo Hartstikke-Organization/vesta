@@ -23,13 +23,15 @@ function nav() {
 
   const hamburgerTrigger = document.querySelector('.nav_menu-button.is-dark')
 
-  hamburgerTrigger.addEventListener('click', () => {
-    let openState = hamburgerTrigger.getAttribute('aria-expanded')
-    console.log(openState)
-    openState === 'false'
-      ? navbarMenu.classList.add('is-active')
-      : navbarMenu.classList.remove('is-active')
-  })
+  if (hamburgerTrigger) {
+    hamburgerTrigger.addEventListener('click', () => {
+      let openState = hamburgerTrigger.getAttribute('aria-expanded')
+      console.log(openState)
+      openState === 'false'
+        ? navbarMenu.classList.add('is-active')
+        : navbarMenu.classList.remove('is-active')
+    })
+  }
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > offsetY) {
