@@ -1,4 +1,6 @@
 const sendRequest = () => {
+  console.log('this works')
+
   const apiUrl =
     'https://prod-47.northeurope.logic.azure.com:443/workflows/50b062f3b751428394c90d3c54c66633/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=jc_r21azv5xTgXYH9RwHjsKj0mIbOSJAw9AF-x-0Go8'
 
@@ -13,8 +15,14 @@ const sendRequest = () => {
   }
 
   function buildLeadData(form) {
+    const siteName =
+      document.querySelector('meta[property="og:site_name"]')?.content ||
+      document.querySelector('meta[name="site-name"]')?.content ||
+      document.title ||
+      window.location.hostname
+
     const data = {
-      Project: getValue(form, 'Project'),
+      Project: siteName,
       LeadSource: getValue(form, 'LeadSource'),
       FirstName: getValue(form, 'name'),
       LastName: getValue(form, 'surname'),
