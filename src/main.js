@@ -24,6 +24,7 @@ const sendRequest = () => {
   function getBool(form, name) {
     const el = form.querySelector(`[name="${name}"]`)
     return el ? el.checked : false
+    //
   }
 
   function getProjectFromUrl() {
