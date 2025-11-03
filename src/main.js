@@ -1,8 +1,11 @@
 const sendRequest = () => {
   console.log('this works')
-
+  /*
+  Sandbox URL:
+  https://prod-47.northeurope.logic.azure.com:443/workflows/50b062f3b751428394c90d3c54c66633/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=jc_r21azv5xTgXYH9RwHjsKj0mIbOSJAw9AF-x-0Go8
+*/
   const apiUrl =
-    'https://prod-47.northeurope.logic.azure.com:443/workflows/50b062f3b751428394c90d3c54c66633/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=jc_r21azv5xTgXYH9RwHjsKj0mIbOSJAw9AF-x-0Go8'
+    'https://4eda0ad3dfa7e2f1985a6b8aa8bd0157.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/8cb0aa76244d406c80b33ded2fbd964d/triggers/manual/paths/invoke/?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=6RQ1defVrr-_AWlUFYkRo2q0-S2u_uj2eAhajl6xHlQ'
 
   // Mapping of URL fragments to project names
   const projectMapping = {
